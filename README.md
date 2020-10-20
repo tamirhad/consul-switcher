@@ -13,7 +13,7 @@ for the ones who cant run footloose ive created Vagrant file, just install Vagra
 chmod +x bootstrap.sh
 ./bootstrap.sh
 # to ssh into node0(master):
-footloose ssh root@node0
+sudo footloose ssh root@node0 -c /labs/footloose.yaml
 # verify cluster is running:
 kubectl get nodes
 $ verify all pods are up and running:
