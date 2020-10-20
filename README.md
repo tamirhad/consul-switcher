@@ -6,6 +6,7 @@ we will deploy small k8s cluster using [Vagrant](https://www.vagrantup.com/) ins
 [Consul](https://www.consul.io/) server + agent deployed in our cluster for service-mesh we will populate the backend servers and HAproxy with values from its KV store and DNS.
 ## Demo
 Just instll [Vagrant](https://www.vagrantup.com/) and lets go!
-'''
+
+```
 vagrant up
-'''
+```
