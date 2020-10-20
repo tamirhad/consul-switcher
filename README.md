@@ -2,12 +2,22 @@
 Fun POC i got from my ex-manager to practice some DevOps skills.
 in this demo we will be able add/delete nodeJS backend servers within a click of a button.
 ## architecture
-we will deploy small k8s cluster using [Vagrant](https://www.vagrantup.com/) inside we will build lightweight Kubernets cluster using [K3s](https://k3s.io/) with calico on Docker+[Footloose](https://github.com/weaveworks/footloose) setup already in it(we need to save some memory after all :P).
+we will deploy lightweight [K3s](https://k3s.io/) cluster using [Footloose](https://github.com/weaveworks/footloose) with calico networking.
 [Consul](https://www.consul.io/) server + agent deployed in our cluster for service-mesh.
 we will populate the backend servers and HAproxy with values from its KV store and DNS.
+V
 ## Demo
-Just instll [Vagrant](https://www.vagrantup.com/) and lets go!
-
+Just install [Footloose](https://github.com/weaveworks/footloose)+Docker and lets go!
+for the ones who cant run footloose ive created Vagrant file, just install Vagrant and have fun.
 ```
-vagrant up
+chmod +x bootstrap.sh
+./bootstrap.sh
+# to ssh into node0(master):
+footloose ssh root@node0
+# verify cluster is running:
+kubectl get nodes
+$ verify all pods are up and running:
+kubectl get pods --all-namespaces
+# verify calico networking is up, check routes are being leared by bird over tunnel0:
+ip route
 ```
