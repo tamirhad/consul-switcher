@@ -1,0 +1,10 @@
+# 2
+app2:
+  image: app2
+  ports:
+          - "8080"
+  environment:
+    SERVICE_NAME: 'app2'
+    SERVICE_CHECK_HTTP: '/'
+    SERVICE_CHECK_INTERVAL: '5s'
+    
