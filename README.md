@@ -3,13 +3,13 @@ Fun POC i got from my ex-manager to practice some DevOps skills.
 in this demo we will be able add/delete dockerized nodeJS backend servers from HAProxy within a click of a button using Consul service mesh capabilitis(KV Store and DNS interface).
 ## architecture
 To achieve this goal i used few components:
-1. [Consul](https://www.consul.io/)
-2. Consul-temaplte engine
-3. Docker and docker-compose
+1. [Consul](https://www.consul.io/) - for service-mesh capabilities 
+2. Consul-temaplte engine - to watch for KV changes+DNS interface
+3. Docker and docker-compose - for our backend servers
 4. HAProxy
 5. Vagrant
 6. NodeJS
-7. registrator  
+7. registrator - to register new containers to Consul
 Lets start from inside out:  
 I wrote simple(and ugly :p) NodeJS code and dockerized it, the image will emulate simple http server, the servers are speaking with Consul API for scale up/down the service(=changing values in Consul KV store).  
 to acheive scaling up and down within a click of a button, ive used docker-compose to make a service, than i used the --scale flag.  
@@ -26,3 +26,6 @@ vagrant up
 ```
 navigate into: http://172.20.20.10:8500 to see the Consul UI.  
 navigate into: http://172.20.20.10 to access our service through HAproxy.
+
+## Disclaimer
+this is for demo puproses only, written fast and not intended for production use.
