@@ -20,8 +20,7 @@ All of the componenets are instlled inside Vagrant machine for best compability 
 
 
 ## Demo
-Just instll [Vagrant](https://www.vagrantup.com/) and lets go!
-
+just install vagrant and have fun!
 ```
 vagrant up
 ```
