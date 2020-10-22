@@ -9,7 +9,7 @@ To achieve this goal i used few components:
 4. HAProxy
 5. Vagrant
 6. NodeJS
-7. registrator - to register new containers to Consul
+7. registrator - to register new containers to Consul    
 Lets start from inside out:  
 I wrote simple(and ugly :p) NodeJS code and dockerized it, the image will emulate simple http server, the servers are speaking with Consul API for scale up/down the service(=changing values in Consul KV store).  
 to acheive scaling up and down within a click of a button, ive used docker-compose to make a service, than i used the --scale flag.  
